@@ -278,7 +278,7 @@
         }
         counter.textContent = '0';
         const startedAt = performance.now();
-        const duration = 950;
+        const duration = 1600;
         const update = now => {
           const progressValue = Math.min(1, (now - startedAt) / duration);
           const eased = 1 - Math.pow(1 - progressValue, 3);
