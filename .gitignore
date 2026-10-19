@@ -1,0 +1,23 @@
+# Perfis e arquivos temporários do navegador
+apresentacao/.edge-*/
+apresentacao/.review-*/
+apresentacao/.slide5-*/
+apresentacao/.pdf-final-*/
+
+# Imagens usadas somente para conferência visual
+apresentacao/preview-*.png
+apresentacao/review-*.png
+apresentacao/slide-*-check.png
+
+# Logs locais
+*.log
+
+# Exportações intermediárias e cópias locais
+apresentacao/Bem_Lembrado_Apresentacao_atualizada.pdf
+Bem_Lembrado_Apresentacao_PREVIA.pdf
+
+# Arquivos do sistema e editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

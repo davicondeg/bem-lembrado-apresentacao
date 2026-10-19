@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bem Lembrado — Apresentação</title>
+  <style>
+    :root{--green:#25a96b;--green2:#168b59;--mint:#e8f7ef;--navy:#164e63;--yellow:#f4c95d;--ink:#17211d;--muted:#62736c;--paper:#f7f9f8;--white:#fff;--line:#dce8e2;--red:#d85a5a}
+    *{box-sizing:border-box}html,body{margin:0;background:#ccd8d2;color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif}body{counter-reset:slide}
+    @page{size:13.333in 7.5in;margin:0}
+    .slide{counter-increment:slide;width:13.333in;height:7.5in;margin:18px auto;background:var(--paper);position:relative;overflow:hidden;padding:52px 66px;page-break-after:always;break-after:page;box-shadow:0 14px 40px #27493a33}
+    .slide::after{content:counter(slide,"decimal-leading-zero");position:absolute;right:28px;bottom:22px;color:#8aa097;font-size:12px;font-weight:700;letter-spacing:.12em}
+    .kicker{font-size:14px;text-transform:uppercase;letter-spacing:.16em;color:var(--green2);font-weight:800;margin-bottom:10px}.title{font-size:42px;line-height:1.08;margin:0 0 12px;color:var(--navy);letter-spacing:-.035em}.subtitle{font-size:19px;color:var(--muted);line-height:1.42;max-width:740px}.brand{position:absolute;left:66px;bottom:24px;font-weight:800;color:var(--navy);font-size:13px}.brand i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green);margin-right:8px}.grid{display:grid;gap:22px}.cols2{grid-template-columns:1fr 1fr}.cols3{grid-template-columns:repeat(3,1fr)}.cols4{grid-template-columns:repeat(4,1fr)}
+    .card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 8px 20px #305d4910}.card h3{font-size:18px;color:var(--navy);margin:0 0 8px}.card p{font-size:15px;color:var(--muted);line-height:1.35;margin:0}.icon{width:42px;height:42px;border-radius:13px;background:var(--mint);display:grid;place-items:center;color:var(--green2);font-weight:900;margin-bottom:14px;font-size:20px}.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 13px;background:var(--mint);color:var(--green2);font-size:13px;font-weight:800}.dot{width:8px;height:8px;background:var(--green);border-radius:50%}.note{background:var(--navy);color:white;border-radius:18px;padding:17px 21px;font-weight:650;font-size:17px}.muted{color:var(--muted)}
+    .hero{background:linear-gradient(140deg,#f9fbfa 0%,#edf8f3 58%,#d9f3e6 100%)}.hero .logo{width:510px;height:auto;margin-bottom:30px}.hero h1{font-size:54px;line-height:1.03;margin:0;color:var(--navy);letter-spacing:-.05em;max-width:610px}.hero h1 em{font-style:normal;color:var(--green2)}.hero .lead{font-size:21px;color:#49635a;max-width:610px;line-height:1.45;margin-top:18px}.team{font-size:13px;color:#5c7169;max-width:650px;line-height:1.6;margin-top:38px}.phone{position:absolute;width:270px;height:535px;border-radius:42px;background:#0e1714;padding:11px;box-shadow:0 25px 55px #164e6340}.phone-screen{height:100%;border-radius:33px;background:#efeae2;overflow:hidden;position:relative}.phone-top{height:68px;background:#075e54;color:white;padding:22px 16px 0;font-weight:700}.chat{padding:15px}.bubble{max-width:88%;border-radius:12px;padding:11px 13px;margin:10px 0;font-size:13px;line-height:1.35;box-shadow:0 2px 3px #0001}.bubble.in{background:white}.bubble.out{background:#d9fdd3;margin-left:auto}.time{font-size:9px;color:#75847e;float:right;margin:6px 0 0 10px}.hero .phone{right:100px;top:72px;transform:rotate(2deg)}
+    .stat{display:flex;align-items:flex-end;gap:18px;margin:24px 0}.big{font-size:94px;font-weight:900;color:var(--green2);letter-spacing:-.08em;line-height:.85}.stat-copy{font-size:20px;color:var(--navy);font-weight:750;line-height:1.25;max-width:310px}.problem-grid{margin-top:25px}.problem-grid .card{min-height:145px}.source{font-size:11px;color:#7b8c85;margin-top:10px}
+    .people{display:flex;gap:10px;margin:18px 0}.avatar{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--mint);border:2px solid white;box-shadow:0 3px 10px #0001;font-size:23px}.learning{padding:17px 18px;border-left:5px solid var(--green);background:white;border-radius:0 18px 18px 0}.learning b{display:block;color:var(--navy);font-size:17px;margin-bottom:4px}.quote{font-size:29px;font-weight:800;color:var(--navy);line-height:1.18;margin-top:25px}.quote span{color:var(--green2)}
+    .flow{display:flex;align-items:stretch;gap:8px;margin-top:32px}.step{flex:1;background:white;border:1px solid var(--line);border-radius:18px;padding:18px 10px;text-align:center;min-height:132px}.step .ico{width:44px;height:44px;margin:0 auto 12px;border-radius:14px;background:var(--mint);display:grid;place-items:center;color:var(--navy);font-size:20px;font-weight:900}.step b{display:block;color:var(--navy);font-size:14px}.step small{display:block;color:var(--muted);font-size:11px;margin-top:5px;line-height:1.25}.arrow{display:grid;place-items:center;color:var(--green);font-size:25px;font-weight:900}.architecture{margin-top:24px;background:#eff7f3;border-radius:20px;padding:18px 24px;color:var(--navy);font-weight:750;text-align:center}
+    .demo-wrap{display:grid;grid-template-columns:1.12fr .88fr;gap:26px;margin-top:20px}.dashboard{background:white;border-radius:20px;border:1px solid var(--line);overflow:hidden;box-shadow:0 12px 28px #315b4914}.dash-top{height:49px;background:var(--navy);color:white;display:flex;align-items:center;padding:0 19px;font-weight:800}.dash-body{display:grid;grid-template-columns:128px 1fr;min-height:360px}.side{background:#f0f6f3;padding:17px 12px}.side div{font-size:11px;padding:9px;border-radius:9px;color:#536860;margin-bottom:5px}.side .active{background:var(--mint);color:var(--green2);font-weight:800}.main{padding:18px}.mini-title{font-size:18px;color:var(--navy);font-weight:800;margin-bottom:14px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.metric{border:1px solid var(--line);border-radius:12px;padding:12px}.metric b{font-size:22px;color:var(--navy)}.metric span{display:block;font-size:10px;color:var(--muted);margin-top:2px}.reminder{margin-top:13px;border:1px solid var(--line);border-radius:13px;padding:12px;display:flex;align-items:center;gap:11px}.check{width:31px;height:31px;border-radius:10px;background:var(--mint);display:grid;place-items:center;color:var(--green2);font-weight:900}.reminder b{font-size:12px;color:var(--navy)}.reminder small{display:block;font-size:10px;color:var(--muted);margin-top:2px}.status{margin-left:auto;background:var(--mint);color:var(--green2);border-radius:20px;padding:5px 8px;font-size:9px;font-weight:800}.demo-phone{position:relative;width:225px;height:405px;border-radius:34px;background:#101815;padding:9px;margin:auto;box-shadow:0 18px 32px #164e6338}.demo-phone .phone-screen{border-radius:27px}.demo-phone .phone-top{height:56px;padding-top:17px;font-size:13px}.demo-phone .bubble{font-size:11px;padding:9px}.demo-label{text-align:center;color:var(--muted);font-size:12px;margin-top:8px}
+    .boundary{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:25px}.yes,.no{background:white;border-radius:22px;border:1px solid var(--line);padding:20px}.yes h3{color:var(--green2)}.no h3{color:var(--red)}.list{list-style:none;padding:0;margin:12px 0 0}.list li{padding:8px 0 8px 27px;position:relative;border-bottom:1px solid #edf2ef;font-size:14px}.list li:last-child{border:0}.yes li:before{content:"✓";position:absolute;left:0;color:var(--green2);font-weight:900}.no li:before{content:"×";position:absolute;left:2px;color:var(--red);font-weight:900}.security{display:flex;justify-content:space-between;background:var(--navy);color:white;border-radius:16px;padding:14px 20px;margin-top:18px;font-size:12px;font-weight:750}
+    .numbers{margin-top:24px}.number-card{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}.number-card b{display:block;color:var(--navy);font-size:31px;letter-spacing:-.04em}.number-card span{color:var(--muted);font-size:12px}.risk-row{display:flex;gap:9px;margin-top:18px}.risk{border-radius:999px;background:#fff7df;color:#765e13;padding:8px 12px;font-size:11px;font-weight:800}.method{margin-top:18px;background:white;border-left:5px solid var(--green);border-radius:0 16px 16px 0;padding:15px 19px;color:var(--muted);font-size:13px}.method b{color:var(--navy)}
+    .result-grid{margin-top:25px}.result-grid .card{min-height:142px}.result-grid .card b{font-size:25px;color:var(--navy)}.result-grid .card span{display:block;font-size:12px;color:var(--muted);margin-top:8px}.result-grid .planned{border-style:dashed}.lesson{margin-top:20px;background:linear-gradient(90deg,var(--navy),#1f667c);color:white;border-radius:20px;padding:19px 24px;font-size:18px;font-weight:700}.lesson em{color:#aaf0cc;font-style:normal}
+    .timeline{display:flex;align-items:flex-start;margin-top:34px}.phase{flex:1;position:relative;text-align:center}.phase:before{content:"";position:absolute;top:22px;left:-50%;width:100%;height:4px;background:#cfe7db}.phase:first-child:before{display:none}.node{width:47px;height:47px;border-radius:50%;background:var(--navy);color:white;display:grid;place-items:center;margin:0 auto 14px;position:relative;z-index:1;font-weight:900}.phase:first-child .node{background:var(--green)}.phase b{display:block;color:var(--navy);font-size:14px}.phase small{display:block;color:var(--muted);font-size:11px;line-height:1.25;margin:6px auto 0;max-width:140px}.closing{margin-top:30px;display:flex;align-items:center;gap:22px}.closing .mark{width:64px;height:64px;border-radius:20px;background:var(--green);color:white;display:grid;place-items:center;font-size:29px}.closing p{font-size:24px;color:var(--navy);font-weight:800;line-height:1.25;margin:0;max-width:700px}.closing p span{color:var(--green2)}
+    .impact-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.impact{background:var(--navy);color:white;border-radius:16px;padding:15px 17px}.impact b{display:block;font-size:15px}.impact small{display:block;color:#cae0d8;font-size:11px;line-height:1.3;margin-top:4px}.stakeholders{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin-top:18px}.stake{background:white;border:1px solid var(--line);border-radius:14px;padding:11px 7px;text-align:center}.stake b{display:block;color:var(--navy);font-size:11px}.stake small{font-size:9px;color:var(--muted)}
+    .problem-statement{margin-top:13px;background:var(--navy);color:white;border-radius:15px;padding:12px 17px;font-size:13px}.problem-statement b{color:#aaf0cc}.audience-grid{display:grid;grid-template-columns:1fr 1fr .85fr;gap:12px;margin-top:18px}.audience{background:white;border:1px solid var(--line);border-radius:17px;padding:15px}.audience b{display:block;color:var(--navy);font-size:14px;margin-bottom:5px}.audience p{margin:0;color:var(--muted);font-size:11px;line-height:1.35}.audience.pilot{background:var(--mint);border-color:#d4ebdf}.insights-line{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.insight{background:#eef4f1;color:#49635a;border-radius:999px;padding:7px 10px;font-size:10px;font-weight:700}.feature-line{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.feature{background:var(--mint);color:var(--green2);border-radius:999px;padding:7px 10px;font-size:10px;font-weight:800}
+    .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.mini-card{background:#eef7f2;border-radius:14px;padding:13px 15px}.mini-card b{display:block;color:var(--green2);font-size:12px;margin-bottom:3px}.mini-card span{display:block;color:var(--navy);font-size:12px;line-height:1.3}.req-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:15px}.req-box{background:white;border:1px solid var(--line);border-radius:18px;padding:16px 19px}.req-box h3{margin:0 0 8px;color:var(--navy);font-size:16px}.req-box ul{margin:0;padding-left:18px;color:var(--muted);font-size:12px;line-height:1.55}.scope-foot{margin-top:12px;border-left:4px solid var(--yellow);padding:9px 13px;background:#fff9e9;border-radius:0 12px 12px 0;font-size:11px;color:#5d532f}
+    .resource-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:17px}.resource{background:white;border:1px solid var(--line);border-radius:17px;padding:15px}.resource b{display:block;color:var(--navy);font-size:14px;margin-bottom:5px}.resource span{display:block;color:var(--muted);font-size:10px;line-height:1.35}.viability{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:15px}.viable{background:var(--mint);border-radius:15px;padding:13px}.viable b{display:block;color:var(--green2);font-size:13px}.viable small{display:block;color:#46645a;font-size:10px;line-height:1.3;margin-top:4px}
+    .risk-table{width:100%;border-collapse:separate;border-spacing:0 7px;margin-top:16px;font-size:11px}.risk-table th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em;padding:0 12px}.risk-table td{background:white;padding:10px 12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.risk-table td:first-child{border-left:1px solid var(--line);border-radius:11px 0 0 11px;font-weight:750;color:var(--navy)}.risk-table td:last-child{border-right:1px solid var(--line);border-radius:0 11px 11px 0;color:var(--muted)}.tag-high,.tag-med,.tag-vhigh{display:inline-block;border-radius:999px;padding:4px 8px;font-weight:800}.tag-high{background:#ffe8cf;color:#995219}.tag-med{background:#fff4cd;color:#806718}.tag-vhigh{background:#ffe0e0;color:#a13e3e}.method-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.method-step{background:var(--navy);color:white;border-radius:13px;padding:11px;text-align:center;font-size:11px}.method-step b{display:block;color:#aaf0cc;margin-bottom:3px}
+    .week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:24px}.week{background:white;border:1px solid var(--line);border-radius:14px;padding:13px 9px;min-height:154px;position:relative}.week:after{content:"›";position:absolute;right:-8px;top:61px;color:var(--green);font-size:18px;font-weight:900;z-index:2}.week:last-child:after{display:none}.week b{display:block;color:var(--green2);font-size:11px;margin-bottom:7px}.week strong{display:block;color:var(--navy);font-size:12px;line-height:1.2}.week small{display:block;color:var(--muted);font-size:9px;line-height:1.3;margin-top:6px}.week em{display:block;color:#876c14;background:#fff4cd;border-radius:7px;padding:4px 5px;font-size:8px;font-style:normal;margin-top:8px}.dependency{margin-top:14px;background:#eff7f3;border-radius:14px;padding:11px 16px;color:var(--navy);font-size:11px;text-align:center}
+    .learning-grid{display:grid;grid-template-columns:1.1fr .95fr .95fr;gap:16px;margin-top:20px}.learning-col{background:white;border:1px solid var(--line);border-radius:18px;padding:17px}.learning-col h3{margin:0 0 10px;color:var(--navy);font-size:16px}.learning-col ul{margin:0;padding-left:17px;color:var(--muted);font-size:11px;line-height:1.55}.learning-col.challenge{border-top:5px solid var(--yellow)}.learning-col.learned{border-top:5px solid var(--green)}.result-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:14px}.result-pill{background:var(--mint);border-radius:12px;padding:10px;text-align:center}.result-pill b{display:block;color:var(--green2);font-size:18px}.result-pill small{font-size:9px;color:var(--muted)}
+    .part2-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:15px}.stake-table{width:100%;border-collapse:collapse;background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:11px}.stake-table th{text-align:left;background:#eef7f2;color:var(--navy);padding:8px 12px}.stake-table td{padding:8px 12px;border-top:1px solid #e9f0ec;color:var(--muted)}.stake-table td:first-child{font-weight:800;color:var(--navy)}.resources-stack{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.resource-detail{background:white;border:1px solid var(--line);border-radius:13px;padding:11px;min-height:86px}.resource-detail b{display:block;color:var(--green2);font-size:12px;margin-bottom:4px}.resource-detail span{display:block;color:var(--muted);font-size:9.5px;line-height:1.32}.team-line{grid-column:1/-1;background:var(--navy);color:white;border-radius:13px;padding:9px 12px;font-size:10px;line-height:1.35}.team-line b{color:#aaf0cc}
+    .scope-columns{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}.scope-box{background:white;border:1px solid var(--line);border-radius:17px;padding:15px 18px}.scope-box h3{margin:0 0 8px;color:var(--navy);font-size:15px}.scope-box ul{margin:0;padding-left:17px;color:var(--muted);font-size:10px;line-height:1.5}.scope-box.out{border-top:5px solid var(--yellow)}.scope-box.in{border-top:5px solid var(--green)}
+    .requirements-full{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.requirement-column{background:white;border:1px solid var(--line);border-radius:18px;padding:15px}.requirement-column h3{margin:0 0 9px;color:var(--navy);font-size:16px}.req-item{display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-top:1px solid #edf2ef}.req-item:first-of-type{border-top:0}.req-id{flex:0 0 42px;border-radius:7px;background:var(--mint);color:var(--green2);font-size:9px;font-weight:900;padding:4px;text-align:center}.req-text{font-size:10px;color:var(--muted);line-height:1.3}.trace-note{margin-top:12px;background:#eff7f3;border-radius:12px;padding:10px 13px;font-size:10px;color:var(--navy)}
+    .critical-table{width:100%;border-collapse:separate;border-spacing:0 7px;margin-top:16px;font-size:10px}.critical-table th{text-align:left;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.07em;padding:0 10px}.critical-table td{background:white;padding:9px 10px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--muted);line-height:1.25}.critical-table td:first-child{border-left:1px solid var(--line);border-radius:10px 0 0 10px;font-weight:800;color:var(--navy)}.critical-table td:last-child{border-right:1px solid var(--line);border-radius:0 10px 10px 0;font-weight:700;color:var(--green2)}.parallel-note{margin-top:11px;background:#fff8e5;border-left:4px solid var(--yellow);border-radius:0 12px 12px 0;padding:10px 13px;color:#5d532f;font-size:10px}
+    .method-intro{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.method-card{background:white;border:1px solid var(--line);border-radius:16px;padding:14px}.method-card b{display:block;color:var(--navy);font-size:15px;margin-bottom:4px}.method-card p{margin:0;color:var(--muted);font-size:10px;line-height:1.35}.workflow{display:flex;align-items:center;gap:8px;margin-top:18px}.work-step{flex:1;background:var(--navy);color:white;border-radius:14px;padding:13px 8px;text-align:center}.work-step b{display:block;color:#aaf0cc;font-size:12px}.work-step small{font-size:9px;line-height:1.25}.work-arrow{color:var(--green);font-size:22px;font-weight:900}.governance{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:16px}.roles{background:white;border:1px solid var(--line);border-radius:16px;padding:13px}.roles h3,.acceptance h3{margin:0 0 7px;color:var(--navy);font-size:14px}.role-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px 10px}.role{font-size:9px;color:var(--muted)}.role b{color:var(--green2)}.acceptance{background:var(--mint);border-radius:16px;padding:13px}.acceptance ul{margin:0;padding-left:16px;color:#46645a;font-size:9px;line-height:1.45}
+
+    /* Ritmo visual unificado: mais respiro entre blocos e leitura consistente. */
+    .slide{padding:48px 64px}.slide::after{right:30px;bottom:22px}.brand{left:64px;bottom:23px}
+    .kicker{margin:0 0 9px}.title{margin:0 0 15px}.subtitle{margin:0;line-height:1.46}
+    .grid{gap:18px}.card{padding:20px}.card h3{margin-bottom:10px}.card p{line-height:1.44}.icon{margin-bottom:13px}
+    .problem-grid,.result-grid{margin-top:22px}.audience-grid,.impact-row,.stakeholders{margin-top:16px}.audience-grid,.impact-row{gap:16px}.stakeholders{gap:11px}
+    .flow{gap:10px;margin-top:26px}.architecture{margin-top:20px}.demo-wrap{gap:30px;margin-top:18px}
+    .scope-columns,.requirements-full{gap:18px;margin-top:17px}.scope-box,.requirement-column{padding:17px 19px}.scope-box h3,.requirement-column h3{margin-bottom:10px}
+    .part2-grid{gap:15px;margin-top:17px}.resources-stack{gap:11px}.resource-detail{padding:12px;min-height:88px}.resource-detail b{margin-bottom:6px}.team-line{padding:10px 13px}
+    .numbers{margin-top:21px}.number-card{padding:18px 20px}.viability{gap:14px;margin-top:17px}.viable{padding:14px}.viable small{line-height:1.38;margin-top:6px}
+    .risk-table{border-spacing:0 8px;margin-top:18px}.risk-table th{padding-bottom:2px}.risk-table td{padding:11px 13px}.risk-row{gap:10px;margin-top:17px}
+    .week-grid{gap:10px;margin-top:21px}.week{padding:14px 10px}.week b{margin-bottom:8px}.week small{line-height:1.38;margin-top:7px}.week em{margin-top:9px}.dependency{margin-top:16px;padding:12px 17px}
+    .critical-table{border-spacing:0 8px;margin-top:17px}.critical-table th{padding-bottom:2px}.critical-table td{padding:10px 11px;line-height:1.32}.parallel-note{margin-top:12px;padding:11px 14px}
+    .method-intro{gap:17px;margin-top:16px}.method-card{padding:15px 17px}.method-card b{margin-bottom:6px}.method-card p{line-height:1.42}.workflow{gap:10px;margin-top:17px}.work-step{padding:13px 9px}.governance{gap:17px;margin-top:17px}.roles,.acceptance{padding:14px 16px}.roles h3,.acceptance h3{margin-bottom:9px}.role-grid{gap:7px 12px}
+    .learning-grid{gap:18px;margin-top:21px}.learning-col{padding:18px 19px}.learning-col h3{margin-bottom:12px}.learning-col ul{line-height:1.62}.result-strip{gap:11px;margin-top:16px}.result-pill{padding:11px}.timeline{margin-top:30px}.closing{gap:20px}
+    .demo-sequence{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.demo-step{display:flex;align-items:center;gap:10px;background:var(--mint);border-radius:13px;padding:9px 12px}.demo-step b{width:24px;height:24px;flex:0 0 24px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:white;font-size:11px}.demo-step span{color:var(--navy);font-size:11px;font-weight:750;line-height:1.25}
+    .prototype-slide .title{margin-bottom:34px}.prototype-slide .demo-wrap{grid-template-columns:1.15fr .85fr;gap:42px;margin-top:0;align-items:start}.prototype-slide .dash-top{height:51px;padding:0 21px}.prototype-slide .dash-body{grid-template-columns:130px 1fr;min-height:382px}.prototype-slide .side{padding:21px 13px}.prototype-slide .side div{padding:10px;margin-bottom:8px}.prototype-slide .main{padding:22px 20px}.prototype-slide .mini-title{margin-bottom:18px}.prototype-slide .metrics{gap:12px}.prototype-slide .metric{padding:14px 13px}.prototype-slide .reminder{margin-top:16px;padding:13px;gap:12px}.prototype-slide .demo-phone{height:425px}.prototype-slide .demo-label{margin-top:13px}.prototype-slide .demo-sequence{gap:18px;margin-top:18px}.prototype-slide .demo-step{gap:12px;padding:10px 14px}.prototype-slide .brand{bottom:14px}
+    .evidence-note{margin-top:14px;background:#fff8e5;border-left:4px solid var(--yellow);border-radius:0 12px 12px 0;padding:10px 14px;color:#5d532f;font-size:10px;line-height:1.35}.status-label{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:6px 10px;background:var(--mint);color:var(--green2);font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.06em}
+    .impact-manifesto{margin-top:18px;background:linear-gradient(100deg,var(--navy),#1f667c);color:white;border-radius:18px;padding:17px 21px;font-size:19px;font-weight:750;line-height:1.3}.impact-manifesto em{color:#aaf0cc;font-style:normal}
+    .final-slide{background:linear-gradient(140deg,#f9fbfa 0%,#e7f6ee 62%,#d5f0e3 100%)}.final-slide .logo{width:390px;height:auto;margin-bottom:40px}.final-message{font-size:45px;line-height:1.1;letter-spacing:-.04em;color:var(--navy);font-weight:850;max-width:790px;margin:0}.final-message span{color:var(--green2)}.final-next{margin-top:28px;display:inline-flex;align-items:center;gap:12px;background:white;border:1px solid var(--line);border-radius:16px;padding:14px 18px;color:var(--navy);font-size:15px}.final-next b{color:var(--green2)}.thanks{position:absolute;right:72px;bottom:64px;color:var(--navy);font-size:25px;font-weight:850;text-align:right}.thanks small{display:block;margin-top:6px;color:var(--muted);font-size:13px;font-weight:600}
+    @keyframes revealUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes cardRise{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes bubbleIn{from{opacity:0;transform:translateX(-14px) scale(.97)}to{opacity:1;transform:translateX(0) scale(1)}}
+    @keyframes bubbleOut{from{opacity:0;transform:translateX(14px) scale(.97)}to{opacity:1;transform:translateX(0) scale(1)}}
+    @keyframes nodePop{0%{opacity:0;transform:scale(.65)}70%{transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+    @keyframes gentlePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+    @keyframes lineGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    @keyframes numberPop{0%{opacity:0;transform:translateY(8px) scale(.75)}75%{transform:translateY(0) scale(1.08)}100%{opacity:1;transform:scale(1)}}
+    @keyframes statusGlow{0%{box-shadow:0 0 0 0 #25a96b55}100%{box-shadow:0 0 0 9px #25a96b00}}
+    @keyframes arrowNudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+    @media screen{
+      html,body{width:100%;height:100%;overflow:hidden;background:#0b1713}
+      body{position:relative}
+      .slide{position:absolute;left:50%;top:50%;margin:0;visibility:hidden;opacity:0;pointer-events:none;transform:translate(-50%,-50%) scale(var(--deck-scale,1));transform-origin:center center;box-shadow:0 24px 80px #0008;transition:opacity .32s ease}
+      .slide.active{visibility:visible;opacity:1;pointer-events:auto;z-index:2}
+      .slide.active::before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:linear-gradient(90deg,var(--green),#72d7a4,var(--navy));transform-origin:left;animation:lineGrow .7s ease both;z-index:5}
+      .slide.active>.kicker{animation:revealUp .42s .03s both}.slide.active>.title,.slide.active>h1{animation:revealUp .5s .1s both}.slide.active>.subtitle,.slide.active>.lead,.slide.active>.pill,.slide.active>.status-label{animation:revealUp .48s .18s both}
+      .slide.active>:is(.stat,.problem-grid,.audience-grid,.feature-line,.flow,.demo-wrap,.trio,.scope-columns,.part2-grid,.requirements-full,.numbers,.risk-table,.week-grid,.critical-table,.method-intro,.workflow,.result-strip,.learning-grid,.timeline){animation:revealUp .5s .24s both}
+      .slide.active>:is(.problem-statement,.impact-row,.impact-manifesto,.architecture,.demo-sequence,.scope-foot,.trace-note,.viability,.evidence-note,.method,.risk-row,.dependency,.parallel-note,.governance,.lesson,.final-next){animation:revealUp .5s .34s both}
+      .slide.active :is(.card,.audience,.impact,.mini-card,.scope-box,.resource-detail,.requirement-column,.number-card,.viable,.method-card,.learning-col,.result-pill,.demo-step){animation:cardRise .46s both}
+      .slide.active :is(.card,.audience,.impact,.mini-card,.scope-box,.resource-detail,.number-card,.viable,.method-card,.learning-col,.result-pill,.demo-step):nth-child(2){animation-delay:.1s}.slide.active :is(.card,.audience,.impact,.mini-card,.scope-box,.resource-detail,.number-card,.viable,.method-card,.learning-col,.result-pill,.demo-step):nth-child(3){animation-delay:.16s}.slide.active :is(.card,.resource-detail,.number-card,.viable,.result-pill):nth-child(4){animation-delay:.22s}
+      .slide.active .bubble.in{animation:bubbleIn .42s both}.slide.active .bubble.out{animation:bubbleOut .42s .28s both}.slide.active .bubble.in:nth-child(3){animation-delay:.54s}
+      .slide.active .dashboard{animation:bubbleIn .58s .18s both}.slide.active .demo-phone{animation:bubbleOut .58s .3s both}.slide.active .status{animation:statusGlow .8s .85s ease-out both}
+      .slide.active .big,.slide.active .number-card b,.slide.active .metric b,.slide.active .result-pill b{animation:numberPop .55s .38s both}.slide.active .number-card:nth-child(2) b,.slide.active .result-pill:nth-child(2) b{animation-delay:.48s}.slide.active .number-card:nth-child(3) b,.slide.active .result-pill:nth-child(3) b{animation-delay:.58s}.slide.active .number-card:nth-child(4) b,.slide.active .result-pill:nth-child(4) b{animation-delay:.68s}
+      .slide.active .flow .step{animation:cardRise .4s both}.slide.active .flow .step:nth-child(1){animation-delay:.22s}.slide.active .flow .step:nth-child(3){animation-delay:.34s}.slide.active .flow .step:nth-child(5){animation-delay:.46s}.slide.active .flow .step:nth-child(7){animation-delay:.58s}.slide.active .flow .step:nth-child(9){animation-delay:.7s}.slide.active .flow .step:nth-child(11){animation-delay:.82s}.slide.active .arrow,.slide.active .work-arrow{animation:arrowNudge .8s .7s ease-in-out 2}
+      .slide.active :is(.risk-table,.critical-table,.stake-table) tbody tr{animation:revealUp .38s both}.slide.active :is(.risk-table,.critical-table,.stake-table) tbody tr:nth-child(1){animation-delay:.24s}.slide.active :is(.risk-table,.critical-table,.stake-table) tbody tr:nth-child(2){animation-delay:.31s}.slide.active :is(.risk-table,.critical-table,.stake-table) tbody tr:nth-child(3){animation-delay:.38s}.slide.active :is(.risk-table,.critical-table,.stake-table) tbody tr:nth-child(4){animation-delay:.45s}.slide.active :is(.risk-table,.critical-table,.stake-table) tbody tr:nth-child(5){animation-delay:.52s}.slide.active :is(.risk-table,.critical-table,.stake-table) tbody tr:nth-child(6){animation-delay:.59s}
+      .slide.active .week,.slide.active .phase,.slide.active .work-step{animation:cardRise .42s both}.slide.active .week:nth-child(2),.slide.active .phase:nth-child(2){animation-delay:.07s}.slide.active .week:nth-child(3),.slide.active .phase:nth-child(3){animation-delay:.14s}.slide.active .week:nth-child(4),.slide.active .phase:nth-child(4){animation-delay:.21s}.slide.active .week:nth-child(5),.slide.active .phase:nth-child(5){animation-delay:.28s}.slide.active .week:nth-child(6){animation-delay:.35s}.slide.active .week:nth-child(7){animation-delay:.42s}
+      .slide.active .node{animation:nodePop .45s .25s both}.slide.active.final-slide>.logo{animation:revealUp .5s .1s both}.slide.active .final-message{animation:revealUp .58s .25s both}.slide.active .thanks{animation:revealUp .5s .55s both}.slide.active.final-slide .logo{transform-origin:left center}.slide.active.final-slide .logo:hover{animation:gentlePulse .8s ease-in-out}
+      .deck-progress{position:fixed;left:0;top:0;width:100%;height:4px;background:#ffffff18;z-index:20}.deck-progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--green),#aaf0cc);box-shadow:0 0 10px #25a96b88;transition:width .38s ease}
+      .deck-help{position:fixed;right:18px;bottom:14px;z-index:10;color:#d9ebe3;background:#10241dcc;border:1px solid #ffffff20;border-radius:999px;padding:7px 12px;font-size:11px;letter-spacing:.03em;opacity:.5;transition:opacity .2s}
+      .deck-help:hover{opacity:1}
+    }
+    @media (prefers-reduced-motion:reduce){.slide,.slide *{animation:none!important;transition:none!important}}
+    @media print{html,body{background:white;width:auto;height:auto;overflow:visible}.slide{display:block!important;visibility:visible!important;opacity:1!important;position:relative!important;left:auto!important;top:auto!important;transform:none!important;margin:0;box-shadow:none}.slide *{animation:none!important;transition:none!important}.deck-help,.deck-progress{display:none!important}}
+  </style>
+</head>
+<body>
+  <section class="slide hero">
+    <img class="logo" src="logo-bem-lembrado.svg" alt="Bem Lembrado" />
+    <h1>Apoio à rotina da pessoa idosa <em>pelo WhatsApp</em></h1>
+    <p class="lead">Desenvolver e validar um MVP de apoio a lembretes e pequenas rotinas de pessoas idosas pelo WhatsApp, com acompanhamento de contatos autorizados.</p>
+    <p class="team">Arthur Prates Pessoti · Davi Conde Garcia · Gabriel Oliveira de Souza Aguiar<br/>Miguel Saiter Padovan · Rafael Lordes Lovat</p>
+    <div class="phone">
+      <div class="phone-screen"><div class="phone-top">Bem Lembrado</div><div class="chat">
+        <div class="bubble in">Olá, Dona Lúcia! Está na hora do medicamento das 14h. Posso registrar como tomado?<span class="time">14:00</span></div>
+        <div class="bubble out">Sim, já tomei 😊<span class="time">14:03</span></div>
+        <div class="bubble in">Ótimo! Confirmação registrada. Até mais!<span class="time">14:03</span></div>
+      </div></div>
+    </div>
+    <div class="brand"><i></i>Gestão de Projetos de Software · UVV</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">01 · Problema</div><h2 class="title">Lembrar é simples.<br/>Acompanhar nem sempre.</h2>
+    <div class="stat"><div class="big">84%</div><div class="stat-copy">dos usuários de Internet com 60+ utilizavam mensagens instantâneas</div></div>
+    <div class="grid cols3 problem-grid">
+      <div class="card"><div class="icon">↗</div><h3>Rotina fragmentada</h3><p>Alarmes, anotações e mensagens ficam espalhados em vários lugares.</p></div>
+      <div class="card"><div class="icon">?</div><h3>Sem confirmação</h3><p>O familiar nem sempre sabe se o lembrete foi visto ou realizado.</p></div>
+      <div class="card"><div class="icon">＋</div><h3>Barreira de adoção</h3><p>Novos aplicativos criam uma dificuldade adicional para parte do público idoso.</p></div>
+    </div>
+    <div class="problem-statement"><b>Problema central:</b> falta uma forma simples e centralizada de enviar lembretes, registrar confirmações e perceber situações de não resposta.</div>
+    <div class="source">Fonte utilizada no projeto: TIC Domicílios 2024.</div><div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">02 · Público e impacto social</div><h2 class="title">Apoiar a rotina sem retirar<br/>a autonomia.</h2>
+    <div class="audience-grid"><div class="audience"><b>Público principal</b><p>Pessoas com 60 anos ou mais que já conseguem ler e responder mensagens no WhatsApp.</p></div><div class="audience"><b>Público secundário</b><p>Familiares, cuidadores e contatos de confiança autorizados.</p></div><div class="audience pilot"><b>Piloto previsto</b><p>10 a 20 idosos e seus responsáveis, preferencialmente na Grande Vitória.</p></div></div>
+    <div class="insights-line"><span class="insight">4 conversas exploratórias</span><span class="insight">mensagens curtas</span><span class="insight">respostas simples</span><span class="insight">frequência controlada</span><span class="insight">alerta configurável</span></div>
+    <div class="impact-row"><div class="impact"><b>Mais autonomia</b><small>O idoso interage em um canal já conhecido.</small></div><div class="impact"><b>Menos esforço repetitivo</b><small>Familiares reduzem cobranças manuais.</small></div><div class="impact"><b>Percepção mais rápida</b><small>Situações de não confirmação ficam visíveis ao contato autorizado.</small></div></div>
+    <div class="impact-manifesto">O Bem Lembrado não substitui o cuidado humano: <em>fortalece a autonomia e aproxima a rede de apoio.</em></div>
+    <div class="source">Indicadores da próxima etapa: taxa de confirmação, facilidade de uso e satisfação dos participantes.</div>
+    <div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">03 · Proposta e stakeholders</div><h2 class="title">O responsável configura.<br/>O idoso conversa.</h2>
+    <p class="subtitle">O Bem Lembrado é um assistente integrado ao WhatsApp e acompanhado por um painel web, que envia lembretes, registra respostas e alerta contatos autorizados quando necessário.</p>
+    <div class="feature-line"><span class="feature">Cadastrar pessoas</span><span class="feature">Agendar lembretes</span><span class="feature">Confirmar ou adiar</span><span class="feature">Consultar histórico</span><span class="feature">Alertar responsável</span></div>
+    <div class="flow">
+      <div class="step"><div class="ico">▣</div><b>Painel</b><small>cadastros e lembretes</small></div><div class="arrow">›</div>
+      <div class="step"><div class="ico">DB</div><b>Supabase</b><small>dados e autenticação</small></div><div class="arrow">›</div>
+      <div class="step"><div class="ico">⌘</div><b>n8n</b><small>regras e automações</small></div><div class="arrow">›</div>
+      <div class="step"><div class="ico">◉</div><b>WhatsApp</b><small>canal familiar</small></div><div class="arrow">›</div>
+      <div class="step"><div class="ico">✓</div><b>Resposta</b><small>confirmar ou adiar</small></div><div class="arrow">›</div>
+      <div class="step"><div class="ico">!</div><b>Acompanhar</b><small>histórico ou alerta</small></div>
+    </div>
+    <div class="architecture">Regras críticas ficam no sistema. A IA apoia apenas a compreensão e a conversa natural.</div><div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide prototype-slide">
+    <div class="kicker">04 · Protótipo inicial</div><h2 class="title">Do cadastro à confirmação.</h2>
+    <div class="demo-wrap">
+      <div class="dashboard"><div class="dash-top">● &nbsp; Bem Lembrado &nbsp; / &nbsp; Visão geral</div><div class="dash-body">
+        <div class="side"><div class="active">Visão geral</div><div>Pessoas</div><div>Lembretes</div><div>Histórico</div><div>Contatos</div></div>
+        <div class="main"><div class="mini-title">Boa tarde, Mariana</div><div class="metrics"><div class="metric"><b>08</b><span>Lembretes hoje</span></div><div class="metric"><b>06</b><span>Confirmados</span></div><div class="metric"><b>01</b><span>Aguardando</span></div></div>
+          <div class="reminder"><div class="check">✓</div><div><b>Medicamento após o almoço</b><small>Dona Lúcia · 14:00</small></div><div class="status">Confirmado</div></div>
+          <div class="reminder"><div class="check">↻</div><div><b>Consulta com cardiologista</b><small>Sr. Antônio · amanhã, 09:30</small></div><div class="status">Agendado</div></div>
+          <div class="reminder"><div class="check">!</div><div><b>Caminhada da tarde</b><small>Dona Lúcia · 17:00</small></div><div class="status" style="background:#fff4cd;color:#866b16">Aguardando</div></div>
+        </div>
+      </div></div>
+      <div><div class="demo-phone"><div class="phone-screen"><div class="phone-top">Bem Lembrado</div><div class="chat"><div class="bubble in">Olá, Dona Lúcia! Está na hora do medicamento das 14h.<span class="time">14:00</span></div><div class="bubble out">Sim, já tomei.<span class="time">14:03</span></div><div class="bubble in">Confirmação registrada. Obrigado!<span class="time">14:03</span></div></div></div></div><div class="demo-label">Fluxo proposto no protótipo inicial</div></div>
+    </div>
+    <div class="demo-sequence"><div class="demo-step"><b>1</b><span>Responsável agenda no painel</span></div><div class="demo-step"><b>2</b><span>Idoso responde pelo WhatsApp</span></div><div class="demo-step"><b>3</b><span>Status e histórico são atualizados</span></div></div><div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">05 · Declaração inicial de escopo</div><h2 class="title">Um MVP focado, mensurável<br/>e com limites claros.</h2>
+    <div class="trio"><div class="mini-card"><b>OBJETIVO</b><span>Apoiar lembretes e pequenas rotinas pelo WhatsApp.</span></div><div class="mini-card"><b>ENTREGA</b><span>Painel, banco, automações e integração de mensagens.</span></div><div class="mini-card"><b>SUCESSO</b><span>Cadastro → envio → resposta → histórico funcionando.</span></div></div>
+    <div class="scope-columns"><div class="scope-box in"><h3>Incluído no MVP</h3><ul><li>Painel do responsável e autenticação</li><li>Cadastro de idosos, contatos e consentimentos</li><li>Agendamento, envio e histórico de lembretes</li><li>Confirmação, adiamento e alerta de não resposta</li><li>Conversa básica com IA e memória controlada</li></ul></div><div class="scope-box out"><h3>Fora do MVP</h3><ul><li>Diagnóstico, prescrição ou alteração de dose</li><li>Atendimento médico ou de emergência</li><li>Aplicativo próprio, hospitais e dispositivos</li><li>Cobrança, assinaturas e operação em escala</li><li>Painel específico de gestão de memórias</li></ul></div></div>
+    <div class="scope-foot"><b>Premissas e restrições:</b> usuário com familiaridade básica com WhatsApp; consentimento obrigatório; dependência de Internet e serviços externos.</div><div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">06 · Stakeholders e recursos</div><h2 class="title">Quem participa e o que<br/>o projeto exige.</h2>
+    <div class="part2-grid"><table class="stake-table"><thead><tr><th>Stakeholder</th><th>Influência</th><th>Participação</th></tr></thead><tbody><tr><td>Pessoa idosa</td><td>Alta</td><td>Uso e feedback</td></tr><tr><td>Responsável/cuidador</td><td>Alta</td><td>Configuração e testes</td></tr><tr><td>Equipe do projeto</td><td>Alta</td><td>Desenvolvimento e validação</td></tr><tr><td>Professora/UVV</td><td>Alta</td><td>Orientação e avaliação</td></tr><tr><td>Meta/WhatsApp</td><td>Média/alta</td><td>Canal, políticas e API</td></tr><tr><td>Serviços externos</td><td>Média</td><td>Infraestrutura e disponibilidade</td></tr></tbody></table>
+      <div class="resources-stack"><div class="resource-detail"><b>Tecnológicos</b><span>Next.js, Supabase, n8n, WhatsApp, OpenAI, Vercel, GitHub e Figma.</span></div><div class="resource-detail"><b>Financeiros</b><span>175 h de trabalho e orçamento estimado de R$ 16.993,50, já com contingência.</span></div><div class="resource-detail"><b>Informacionais</b><span>Entrevistas, TIC Domicílios, IBGE, LGPD e documentação oficial.</span></div><div class="resource-detail"><b>Materiais</b><span>Computadores, celulares, Internet e contas de teste.</span></div><div class="team-line"><b>Responsáveis:</b> Arthur — gestão · Davi — requisitos/LGPD · Gabriel — backend e integrações · Miguel — frontend/UX · Rafael — testes.</div></div>
+    </div><div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">07 · Requisitos iniciais</div><h2 class="title">O que o sistema deve fazer<br/>e como deve se comportar.</h2>
+    <div class="requirements-full"><div class="requirement-column"><h3>10 requisitos funcionais</h3><div class="req-item"><span class="req-id">RF01–03</span><span class="req-text">Acesso, cadastros e consentimentos.</span></div><div class="req-item"><span class="req-id">RF04–05</span><span class="req-text">Agendamento e envio de lembretes.</span></div><div class="req-item"><span class="req-id">RF06–07</span><span class="req-text">Respostas, status e histórico.</span></div><div class="req-item"><span class="req-id">RF08</span><span class="req-text">Alerta por ausência de confirmação.</span></div><div class="req-item"><span class="req-id">RF09–10</span><span class="req-text">Conversa e memórias autorizadas.</span></div></div><div class="requirement-column"><h3>8 requisitos não funcionais</h3><div class="req-item"><span class="req-id">RNF01</span><span class="req-text">Comunicação e autenticação seguras.</span></div><div class="req-item"><span class="req-id">RNF02–03</span><span class="req-text">Privacidade, LGPD e acesso controlado.</span></div><div class="req-item"><span class="req-id">RNF04</span><span class="req-text">Linguagem simples e acessível.</span></div><div class="req-item"><span class="req-id">RNF05</span><span class="req-text">Tratamento controlado de falhas.</span></div><div class="req-item"><span class="req-id">RNF06–08</span><span class="req-text">Limites da IA, políticas e rastreabilidade.</span></div></div></div>
+    <div class="trace-note"><b>Rastreabilidade:</b> cada requisito possui responsável técnico, forma de implementação, prazo e vínculo com uma atividade do cronograma.</div><div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">08 · Análise de viabilidade</div><h2 class="title">Viável para demonstração.<br/>Condicionado para produção.</h2>
+    <div class="grid cols4 numbers"><div class="number-card"><b>7 semanas</b><span>prazo planejado</span></div><div class="number-card"><b>175 h</b><span>esforço de equipe</span></div><div class="number-card"><b>144 PF</b><span>tamanho funcional</span></div><div class="number-card"><b>R$ 16,9 mil</b><span>orçamento com contingência</span></div></div>
+    <div class="viability"><div class="viable"><b>Técnica</b><small>APIs e webhooks documentados conectam os serviços.</small></div><div class="viable"><b>Operacional</b><small>WhatsApp reduz a curva de aprendizagem do público.</small></div><div class="viable"><b>Prazo</b><small>Frentes paralelas com dependências e marcos semanais.</small></div><div class="viable"><b>Econômica</b><small>Planos de teste atendem ao protótipo acadêmico.</small></div></div>
+    <div class="evidence-note"><b>Base das estimativas:</b> 35 h por integrante, contagem preliminar de pontos de função e custos de mão de obra, serviços e contingência detalhados na documentação do projeto.</div>
+    <div class="method"><b>Conclusão:</b> uma implantação real exige revisão de infraestrutura, custos, políticas da Meta, dependência de serviços externos e capacidade de suporte.</div><div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">09 · Riscos iniciais</div><h2 class="title">Riscos priorizados<br/>por probabilidade e impacto.</h2>
+    <div class="pill"><span class="dot"></span>9 riscos analisados · 4 prioridades apresentadas</div>
+    <table class="risk-table"><thead><tr><th>Risco</th><th>Probabilidade</th><th>Impacto</th><th>Resposta prevista</th></tr></thead><tbody>
+      <tr><td>Integração WhatsApp/Meta</td><td><span class="tag-med">Média</span></td><td><span class="tag-high">Alto</span></td><td>Configurar e testar o envio/recebimento desde o início.</td></tr>
+      <tr><td>Uso inadequado da IA</td><td><span class="tag-med">Média</span></td><td><span class="tag-vhigh">Muito alto</span></td><td>Regras críticas fora da IA, limites e testes negativos.</td></tr>
+      <tr><td>Privacidade e LGPD</td><td><span class="tag-med">Média</span></td><td><span class="tag-vhigh">Muito alto</span></td><td>Minimização, consentimento, autenticação e RLS.</td></tr>
+      <tr><td>Atraso ou aumento de escopo</td><td><span class="tag-high">Alta</span></td><td><span class="tag-high">Alto</span></td><td>Priorizar essenciais e adiar itens desejáveis.</td></tr>
+    </tbody></table>
+    <div class="risk-row"><span class="risk">Falhas no n8n</span><span class="risk">Dificuldade de uso</span><span class="risk">Custos e limites</span><span class="risk">Dependência externa</span><span class="risk">Atrasos da equipe</span></div><div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">10 · Cronograma inicial</div><h2 class="title">Sete semanas organizadas<br/>por entregas e dependências.</h2>
+    <div class="week-grid"><div class="week"><b>SEMANA 1</b><strong>Definir</strong><small>Escopo, requisitos, arquitetura, protótipo e testes.</small><em>Equipe completa</em></div><div class="week"><b>SEMANA 2</b><strong>Preparar</strong><small>Banco, autenticação, painel base e integração WhatsApp.</small><em>Backend + frontend</em></div><div class="week"><b>SEMANA 3</b><strong>Cadastrar</strong><small>Idosos, contatos, lembretes e primeiro envio.</small><em>UX + backend</em></div><div class="week"><b>SEMANA 4</b><strong>Responder</strong><small>Resposta, histórico e alerta ao responsável.</small><em>Backend + testes</em></div><div class="week"><b>SEMANA 5</b><strong>Conversar</strong><small>IA, memória controlada, linguagem e segurança.</small><em>Backend + LGPD</em></div><div class="week"><b>SEMANA 6</b><strong>Estabilizar</strong><small>Integração, regressão, correções e deploy.</small><em>Equipe técnica</em></div><div class="week"><b>SEMANA 7</b><strong>Validar</strong><small>Usuários, ajustes, documentação e apresentação.</small><em>Equipe completa</em></div></div>
+    <div class="dependency"><b>Dependência principal:</b> banco e WhatsApp → primeiro lembrete → resposta e histórico → IA → testes integrados → validação.</div><div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">11 · Atributos das atividades</div><h2 class="title">Tempo, recursos, dependências<br/>e marcos de controle.</h2>
+    <table class="critical-table"><thead><tr><th>Atividade crítica</th><th>Tempo</th><th>Recursos / responsável</th><th>Dependência</th><th>Marco esperado</th></tr></thead><tbody><tr><td>Arquitetura e requisitos</td><td>Semana 1</td><td>Davi + Gabriel</td><td>Objetivo e MVP definidos</td><td>Base aprovada</td></tr><tr><td>Banco e autenticação</td><td>Semana 2</td><td>Gabriel · Supabase</td><td>Arquitetura mínima</td><td>Login funcional</td></tr><tr><td>Painel e cadastros</td><td>Semanas 2–3</td><td>Miguel + Gabriel</td><td>Banco e Auth</td><td>Primeiro cadastro</td></tr><tr><td>WhatsApp e lembretes</td><td>Semanas 2–4</td><td>Gabriel · n8n/Meta</td><td>Credenciais e banco</td><td>Fluxo sem IA</td></tr><tr><td>IA e memória controlada</td><td>Semana 5</td><td>Gabriel + Davi</td><td>Fluxo principal estável</td><td>Conversa segura</td></tr><tr><td>Testes e validação</td><td>Semanas 6–7</td><td>Rafael + equipe</td><td>Versão integrada</td><td>MVP validado</td></tr></tbody></table>
+    <div class="parallel-note"><b>Paralelismo planejado:</b> documentação, frontend e testes avançam junto ao backend quando não dependem da mesma entrega técnica.</div><div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">12 · Metodologia de gestão</div><h2 class="title">Scrum para os ciclos.<br/>Kanban para o fluxo.</h2>
+    <div class="method-intro"><div class="method-card"><b>Scrum adaptado</b><p>Ciclos semanais com objetivo, revisão do que foi entregue e definição do próximo marco.</p></div><div class="method-card"><b>Kanban no GitHub Projects</b><p>Visibilidade contínua de responsáveis, prioridade, dependências, bloqueios e situação das tarefas.</p></div></div>
+    <div class="workflow"><div class="work-step"><b>A fazer</b><small>prioridade e responsável</small></div><div class="work-arrow">›</div><div class="work-step"><b>Em andamento</b><small>execução em branch própria</small></div><div class="work-arrow">›</div><div class="work-step"><b>Revisão / teste</b><small>critério e correção</small></div><div class="work-arrow">›</div><div class="work-step"><b>Concluído</b><small>resultado demonstrável</small></div><div class="work-arrow">↻</div><div class="work-step"><b>Replanejar</b><small>pendências e riscos</small></div></div>
+    <div class="governance"><div class="roles"><h3>Papéis e governança</h3><div class="role-grid"><span class="role"><b>Arthur:</b> prioridades, riscos, dependências e aceite</span><span class="role"><b>Davi:</b> requisitos, documentação e LGPD</span><span class="role"><b>Gabriel:</b> backend, automações, WhatsApp e IA</span><span class="role"><b>Miguel:</b> frontend e experiência</span><span class="role"><b>Rafael:</b> testes e critérios de aceite</span><span class="role"><b>Equipe:</b> revisão semanal e remoção de bloqueios</span></div></div><div class="acceptance"><h3>Definição de concluído</h3><ul><li>resultado demonstrável;</li><li>critérios de aceite atendidos;</li><li>testes executados;</li><li>defeitos críticos tratados;</li><li>documentação atualizada.</li></ul></div></div><div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">13 · Resultados, desafios e aprendizados</div><h2 class="title">O projeto amadureceu<br/>a cada entrega.</h2>
+    <div class="status-label"><span class="dot"></span>Entregas já realizadas nesta etapa</div>
+    <div class="result-strip"><div class="result-pill"><b>4</b><small>conversas exploratórias</small></div><div class="result-pill"><b>18</b><small>requisitos definidos</small></div><div class="result-pill"><b>9</b><small>riscos analisados</small></div><div class="result-pill"><b>144 PF</b><small>estimativa funcional</small></div></div>
+    <div class="learning-grid"><div class="learning-col"><h3>Resultados da etapa</h3><ul><li>Problema e público validados qualitativamente</li><li>Escopo, arquitetura e modelo de dados definidos</li><li>Recursos, riscos e cronograma estruturados</li><li>Protótipo visual do fluxo principal</li></ul></div><div class="learning-col challenge"><h3>Desafios</h3><ul><li>Integrar serviços externos</li><li>Equilibrar autonomia e acompanhamento</li><li>Estimar esforço e custos com coerência</li><li>Controlar funcionalidades do MVP</li></ul></div><div class="learning-col learned"><h3>Aprendizados</h3><ul><li>Regras críticas não devem depender da IA</li><li>Entrevistas mudam decisões de experiência</li><li>Premissas precisam ser revisadas</li><li>Reduzir escopo protege prazo e qualidade</li></ul></div></div>
+    <div class="lesson">O conceito permaneceu estável; <em>esforço, orçamento e escopo foram refinados.</em></div><div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">14 · Cronograma da segunda etapa</div><h2 class="title">Do protótipo à validação<br/>com usuários.</h2>
+    <div class="status-label"><span class="dot"></span>Próximas atividades e metas de validação</div>
+    <div class="timeline">
+      <div class="phase"><div class="node">1</div><b>Integrar · 1 sem.</b><small>Gabriel + Miguel<br/>fluxo completo</small></div>
+      <div class="phase"><div class="node">2</div><b>Testar · 1 sem.</b><small>Rafael + equipe<br/>segurança e falhas</small></div>
+      <div class="phase"><div class="node">3</div><b>Validar · 1 sem.</b><small>Davi + Rafael<br/>idosos e responsáveis</small></div>
+      <div class="phase"><div class="node">4</div><b>Ajustar · 1 sem.</b><small>Equipe técnica<br/>UX e confiabilidade</small></div>
+      <div class="phase"><div class="node">5</div><b>Pilotar · 2 sem.</b><small>Equipe completa<br/>10 a 20 idosos</small></div>
+    </div>
+    <div class="grid cols4" style="margin-top:30px">
+      <div class="card"><h3>Confirmação</h3><p>Taxa de lembretes respondidos.</p></div><div class="card"><h3>Resposta</h3><p>Tempo médio até a interação.</p></div><div class="card"><h3>Usabilidade</h3><p>Fluxo concluído sem ajuda.</p></div><div class="card"><h3>Satisfação</h3><p>Percepção de utilidade e clareza.</p></div>
+    </div>
+    <div class="dependency"><b>Dependências:</b> integrar antes de testar; testar antes de validar; corrigir antes do piloto. Arthur acompanha prioridades, riscos e aceite dos marcos.</div><div class="brand"><i></i>Bem Lembrado</div>
+  </section>
+
+  <section class="slide final-slide">
+    <div class="kicker">15 · Encerramento</div>
+    <img class="logo" src="logo-bem-lembrado.svg" alt="Bem Lembrado" />
+    <p class="final-message">Tecnologia familiar para <span>mais autonomia</span> e uma rede de apoio mais presente.</p>
+    <div class="final-next"><b>Próximo passo:</b> integrar o fluxo completo e validá-lo com usuários.</div>
+    <div class="thanks">Obrigado!<small>Perguntas?</small></div>
+    <div class="brand"><i></i>Gestão de Projetos de Software · UVV</div>
+  </section>
+  <div class="deck-progress" aria-hidden="true"><i></i></div>
+  <div class="deck-help">← → navegar · F tela cheia</div>
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    const progress = document.querySelector('.deck-progress i');
+    const querySlide = Number(new URLSearchParams(location.search).get('slide'));
+    const hashSlide = Number((location.hash.match(/slide-(\d+)/) || [])[1]);
+    let current = Math.min(slides.length - 1, Math.max(0, (querySlide || hashSlide || 1) - 1));
+
+    function fitDeck() {
+      const scale = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+      document.documentElement.style.setProperty('--deck-scale', scale);
+    }
+
+    function showSlide(index) {
+      current = Math.min(slides.length - 1, Math.max(0, index));
+      slides.forEach((slide, position) => slide.classList.toggle('active', position === current));
+      progress.style.width = `${((current + 1) / slides.length) * 100}%`;
+      history.replaceState(null, '', `#slide-${current + 1}`);
+      document.title = `Bem Lembrado — ${current + 1}/${slides.length}`;
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+      else document.exitFullscreen?.();
+    }
+
+    window.addEventListener('resize', fitDeck);
+    document.addEventListener('keydown', event => {
+      if (['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter'].includes(event.key)) {
+        event.preventDefault();
+        showSlide(current + 1);
+      } else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].includes(event.key)) {
+        event.preventDefault();
+        showSlide(current - 1);
+      } else if (event.key === 'Home') {
+        event.preventDefault();
+        showSlide(0);
+      } else if (event.key === 'End') {
+        event.preventDefault();
+        showSlide(slides.length - 1);
+      } else if (event.key.toLowerCase() === 'f') {
+        event.preventDefault();
+        toggleFullscreen();
+      }
+    });
+
+    fitDeck();
+    showSlide(current);
+  </script>
+</body>
+</html>
