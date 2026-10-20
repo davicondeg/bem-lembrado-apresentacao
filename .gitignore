@@ -2,12 +2,15 @@
 apresentacao/.edge-*/
 apresentacao/.review-*/
 apresentacao/.slide5-*/
-apresentacao/.pdf-final-*/
+apresentacao/.pdf-*/
+apresentacao/.*-*/
 
 # Imagens usadas somente para conferência visual
 apresentacao/preview-*.png
 apresentacao/review-*.png
-apresentacao/slide-*-check.png
+apresentacao/slide-*.png
+apresentacao/projector-*.png
+apresentacao/cover-*-check.png
 
 # Logs locais
 *.log
