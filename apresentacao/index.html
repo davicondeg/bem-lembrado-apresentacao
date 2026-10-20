@@ -198,7 +198,7 @@
 
   <section class="slide">
     <div class="kicker">08 · Análise de viabilidade</div><h2 class="title">Viável para demonstração.<br/>Condicionado para produção.</h2>
-    <div class="grid cols4 numbers"><div class="number-card"><b>7 semanas</b><span>prazo planejado</span></div><div class="number-card"><b>175 h</b><span>esforço de equipe</span></div><div class="number-card"><b>144 PF</b><span>tamanho funcional</span></div><div class="number-card"><b>R$ 16,9 mil</b><span>orçamento com contingência</span></div></div>
+    <div class="grid cols4 numbers"><div class="number-card"><b><span data-count="7" data-suffix=" semanas">7 semanas</span></b><span>prazo planejado</span></div><div class="number-card"><b><span data-count="175" data-suffix=" h">175 h</span></b><span>esforço de equipe</span></div><div class="number-card"><b><span data-count="144" data-suffix=" PF">144 PF</span></b><span>tamanho funcional</span></div><div class="number-card"><b><span data-count="16.9" data-prefix="R$ " data-suffix=" mil" data-decimals="1">R$ 16,9 mil</span></b><span>orçamento com contingência</span></div></div>
     <div class="viability"><div class="viable"><b>Técnica</b><small>APIs e webhooks documentados conectam os serviços.</small></div><div class="viable"><b>Operacional</b><small>WhatsApp reduz a curva de aprendizagem do público.</small></div><div class="viable"><b>Prazo</b><small>Frentes paralelas com dependências e marcos semanais.</small></div><div class="viable"><b>Econômica</b><small>Planos de teste atendem ao protótipo acadêmico.</small></div></div>
     <div class="evidence-note"><b>Base das estimativas:</b> 35 h por integrante, contagem preliminar de pontos de função e custos de mão de obra, serviços e contingência detalhados na documentação do projeto.</div>
     <div class="method"><b>Conclusão:</b> uma implantação real exige revisão de infraestrutura, custos, políticas da Meta, dependência de serviços externos e capacidade de suporte.</div><div class="brand"><i></i>Bem Lembrado</div>
@@ -284,18 +284,26 @@
     function animateCounters(slide) {
       slide.querySelectorAll('[data-count]').forEach(counter => {
         const target = Number(counter.dataset.count);
+        const prefix = counter.dataset.prefix || '';
+        const suffix = counter.dataset.suffix || '';
+        const decimals = Number(counter.dataset.decimals || 0);
+        const formatValue = value => value.toFixed(decimals).replace('.', ',');
+        const renderValue = value => {
+          counter.textContent = `${prefix}${formatValue(value)}${suffix}`;
+        };
         if (counter._animationFrame) cancelAnimationFrame(counter._animationFrame);
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          counter.textContent = target;
+          renderValue(target);
           return;
         }
-        counter.textContent = '0';
+        renderValue(0);
         const startedAt = performance.now();
         const duration = 1600;
         const update = now => {
           const progressValue = Math.min(1, (now - startedAt) / duration);
           const eased = 1 - Math.pow(1 - progressValue, 3);
-          counter.textContent = Math.round(target * eased);
+          const animatedValue = decimals ? target * eased : Math.round(target * eased);
+          renderValue(animatedValue);
           if (progressValue < 1) counter._animationFrame = requestAnimationFrame(update);
         };
         counter._animationFrame = requestAnimationFrame(update);
