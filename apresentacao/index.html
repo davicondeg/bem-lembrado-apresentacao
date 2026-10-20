@@ -119,11 +119,9 @@
       .slide.active .week,.slide.active .phase,.slide.active .work-step{animation:cardRise .42s both}.slide.active .week:nth-child(2),.slide.active .phase:nth-child(2){animation-delay:.07s}.slide.active .week:nth-child(3),.slide.active .phase:nth-child(3){animation-delay:.14s}.slide.active .week:nth-child(4),.slide.active .phase:nth-child(4){animation-delay:.21s}.slide.active .week:nth-child(5),.slide.active .phase:nth-child(5){animation-delay:.28s}.slide.active .week:nth-child(6){animation-delay:.35s}.slide.active .week:nth-child(7){animation-delay:.42s}
       .slide.active .node{animation:nodePop .45s .25s both}.slide.active.final-slide>.logo{animation:revealUp .5s .1s both}.slide.active .final-message{animation:revealUp .58s .25s both}.slide.active .thanks{animation:revealUp .5s .55s both}.slide.active.final-slide .logo{transform-origin:left center}.slide.active.final-slide .logo:hover{animation:gentlePulse .8s ease-in-out}
       .deck-progress{position:fixed;left:0;top:0;width:100%;height:4px;background:#ffffff18;z-index:20}.deck-progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--green),#aaf0cc);box-shadow:0 0 10px #25a96b88;transition:width .38s ease}
-      .deck-help{position:fixed;right:18px;bottom:14px;z-index:10;color:#d9ebe3;background:#10241dcc;border:1px solid #ffffff20;border-radius:999px;padding:7px 12px;font-size:11px;letter-spacing:.03em;opacity:.5;transition:opacity .2s}
-      .deck-help:hover{opacity:1}
     }
     @media (prefers-reduced-motion:reduce){.slide,.slide *{animation:none!important;transition:none!important}}
-    @media print{html,body{background:white;width:auto;height:auto;overflow:visible}.slide{display:block!important;visibility:visible!important;opacity:1!important;position:relative!important;left:auto!important;top:auto!important;transform:none!important;margin:0;box-shadow:none}.slide *{animation:none!important;transition:none!important}.deck-help,.deck-progress{display:none!important}}
+    @media print{html,body{background:white;width:auto;height:auto;overflow:visible}.slide{display:block!important;visibility:visible!important;opacity:1!important;position:relative!important;left:auto!important;top:auto!important;transform:none!important;margin:0;box-shadow:none}.slide *{animation:none!important;transition:none!important}.deck-progress{display:none!important}}
   </style>
 </head>
 <body>
@@ -286,7 +284,6 @@
     <div class="brand"><i></i>Gestão de Projetos de Software · UVV</div>
   </section>
   <div class="deck-progress" aria-hidden="true"><i></i></div>
-  <div class="deck-help">← → navegar · F tela cheia</div>
   <script>
     const slides = [...document.querySelectorAll('.slide')];
     const progress = document.querySelector('.deck-progress i');
